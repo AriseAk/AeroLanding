@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AeroBMSCE</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <div class="navbar">
+            <div class="left">
+                <img src="/static/assets/logo.png" alt="">
+                <span>AeroBMSCE</span>
+            </div>
+            <div class="right">
+                <button>Teams</button>
+                <button>Gallery</button>
+                <button>Awards</button>
+                <button>About</button>
+                <button>Contact</button>
+                <!-- <ul class="dropdown">
+                    <li><a href="/">About</a></li>
+                    <li><a href="/">Awards</a></li>
+                    <li><a href="/">Contact</a></li>
+                </ul> -->
+            </div>
+    </div>
+    <!-- Place this inside <body>, ideally just before </body> -->
+<div class="bird-container">
+    <img class="bird" src="/static/assets/logo.png" alt="">
+    <img class="bird" src="/static/assets/logo.png" alt="">
+    <img class="bird" src="/static/assets/logo.png" alt="">
+    <img class="bird" src="/static/assets/logo.png" alt="">
+    <img class="bird" src="/static/assets/logo.png" alt="">
+</div>
+
+</body>
+<script>
+    window.onload = () => {
+        setTimeout(() => {
+            document.querySelector('.bird-container').remove();
+        }, 6000); // slightly more than animation duration
+    };
+</script>
+
+</html>
