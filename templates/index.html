@@ -1,46 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AeroBMSCE</title>
     <link rel="stylesheet" href="/static/index.css">
 </head>
+
 <body>
     <div class="navbar">
-            <div class="left">
-                <img src="/static/assets/logo.png" alt="">
-                <span>AeroBMSCE</span>
-            </div>
-            <div class="right">
-                <button>Teams</button>
-                <button>Gallery</button>
-                <button>Awards</button>
-                <button>About</button>
-                <button>Contact</button>
-                <!-- <ul class="dropdown">
+        <div class="left">
+            <img src="/static/assets/logo.png" alt="">
+            <span>AeroBMSCE</span>
+        </div>
+        <div class="right">
+            <button>Teams</button>
+            <button>Gallery</button>
+            <button>Awards</button>
+            <button>About</button>
+            <button>Contact</button>
+            <!-- <ul class="dropdown">
                     <li><a href="/">About</a></li>
                     <li><a href="/">Awards</a></li>
                     <li><a href="/">Contact</a></li>
                 </ul> -->
-            </div>
+        </div>
     </div>
-    <!-- Place this inside <body>, ideally just before </body> -->
-<div class="bird-container">
-    <img class="bird" src="/static/assets/logo.png" alt="">
-    <img class="bird" src="/static/assets/logo.png" alt="">
-    <img class="bird" src="/static/assets/logo.png" alt="">
-    <img class="bird" src="/static/assets/logo.png" alt="">
-    <img class="bird" src="/static/assets/logo.png" alt="">
-</div>
+    <div class="line"></div>
+    <div class="box">
+        <div class="first">
+            <div class="slideshow first-slideshow">
 
+                <img src="/static/assets/plane.jpeg" class="active" alt="">
+                <img src="/static/assets/green.jpeg" alt="">
+                <img src="/static/assets/Pulse.jpeg" alt="">
+                <img src="/static/assets/inside.jpeg" alt="">
+            </div>
+        </div>
+        <div class="second">
+            <div class="slideshow second-slideshow">
+                <img src="/static/assets/drone2.jpeg" class="active" alt="">
+                <img src="/static/assets/doing.jpeg" alt="">
+                <img src="/static/assets/idk.jpeg">
+            </div>
+        </div>
+        <div class="third">
+            <div class="slideshow third-slideshow">
+                <img src="/static/assets/aero.jpeg" class="active" alt="">
+                <img src="/static/assets/work.jpeg" alt="">
+                <img src="/static/assets/final.jpeg" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div class="line"></div>
+    <div class="bird-container">
+        <img class="bird" src="/static/assets/logo.png" alt="">
+        <img class="bird" src="/static/assets/logo.png" alt="">
+        <img class="bird" src="/static/assets/logo.png" alt="">
+        <img class="bird" src="/static/assets/logo.png" alt="">
+        <img class="bird" src="/static/assets/logo.png" alt="">
+    </div>
+<script src="index.js"></script>
 </body>
 <script>
     window.onload = () => {
         setTimeout(() => {
             document.querySelector('.bird-container').remove();
-        }, 6000); // slightly more than animation duration
+        }, 6000); 
     };
 </script>
+<script>
+    function createSlideshow(className, interval) {
+        const slideshow = document.querySelector(`.${className}`);
+        const images = slideshow.querySelectorAll('img');
+        let currentIndex = 0;
+    
+        setInterval(() => {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }, interval);
+    }
+    
+    window.onload = () => {
+        createSlideshow('first-slideshow', 3000);  
+        createSlideshow('second-slideshow', 5000); 
+        createSlideshow('third-slideshow', 7000);  
+    
+        setTimeout(() => {
+            const birds = document.querySelector('.bird-container');
+            if (birds) birds.remove();
+        }, 6000);
+    };
+    </script>
+    
 
 </html>
