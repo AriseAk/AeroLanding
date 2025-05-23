@@ -15,60 +15,96 @@
             <span>AeroBMSCE</span>
         </div>
         <div class="right">
-            <button>Teams</button>
-            <button>Gallery</button>
-            <button>Awards</button>
-            <button>About</button>
-            <button>Contact</button>
-            <!-- <ul class="dropdown">
-                    <li><a href="/">About</a></li>
-                    <li><a href="/">Awards</a></li>
-                    <li><a href="/">Contact</a></li>
-                </ul> -->
+            <button onclick="window.location.href='team.html'">Teams</button>
+            <button onclick="window.location.href='camera.html'">Gallery</button>
+            <button onclick="window.location.href='awards.html'">Awards</button>
+            <button onclick="window.location.href='about.html'">About</button>
+            <button onclick="window.location.href='contact.html'">Contact</button>
         </div>
     </div>
     <div class="line"></div>
     <div class="box">
-        <div class="first">
-            <div class="slideshow first-slideshow">
+        <div class="header">
+            <div class="outer">AeroBMSCE</div>
+            <div class="inner">Above Gravity,Beyond Limits</div>
+        </div>
+        <div class="covering">
+            <div class="first">
+                <div class="slideshow first-slideshow">
 
-                <img src="/static/assets/plane.jpeg" class="active" alt="">
-                <img src="/static/assets/green.jpeg" alt="">
-                <img src="/static/assets/Pulse.jpeg" alt="">
-                <img src="/static/assets/inside.jpeg" alt="">
+                    <img src="/static/assets/plane.jpeg" class="active" alt="">
+                    <img src="/static/assets/green.jpeg" alt="">
+                    <img src="/static/assets/Pulse.jpeg" alt="">
+                    <img src="/static/assets/inside.jpeg" alt="">
+                </div>
             </div>
-        </div>
-        <div class="second">
-            <div class="slideshow second-slideshow">
-                <img src="/static/assets/drone2.jpeg" class="active" alt="">
-                <img src="/static/assets/doing.jpeg" alt="">
-                <img src="/static/assets/idk.jpeg">
+            <div class="second">
+                <div class="slideshow second-slideshow">
+                    <img src="/static/assets/drone2.jpeg" class="active" alt="">
+                    <img src="/static/assets/doing.jpeg" alt="">
+                    <img src="/static/assets/idk.jpeg">
+                </div>
             </div>
-        </div>
-        <div class="third">
-            <div class="slideshow third-slideshow">
-                <img src="/static/assets/aero.jpeg" class="active" alt="">
-                <img src="/static/assets/work.jpeg" alt="">
-                <img src="/static/assets/final.jpeg" alt="">
+            <div class="third">
+                <div class="slideshow third-slideshow">
+                    <img src="/static/assets/aero.jpeg" class="active" alt="">
+                    <img src="/static/assets/work.jpeg" alt="">
+                    <img src="/static/assets/final.jpeg" alt="">
+                </div>
             </div>
         </div>
 
     </div>
     <div class="line"></div>
+    <section class="team">
+        <a href="team.html" class="holder">
+            <img height="280px" src="/static/assets/people.jpeg" alt="">
+        </a>
+        <a href="team.html" class="info">
+            <div class="text">Our Teams</div>
+            <div class="teaminfo">Passionate innovators, engineers, and creators—our team brings ideas to life in the
+                world of aeromodelling and RC flight</div>
+            </a>
+    </section>
+    <div class="line"></div>
+    <section class="team">
+        <a href="camera.html" class="info">
+            <div class="text">Moments in Motion</div>
+            <div class="teaminfo">Explore our gallery to relive the excitement, creativity, and teamwork that define our
+                journey in aeromodelling and drone innovation</div>
+        </a >
+        <a href="camera.html" class="holder">
+            <img height="280px" src="/static/assets/cameraa.jpeg" alt="">
+        </a>
+    </section>
+    <div class="line"></div>
+    <section class="team">
+        <a href="awards.html" class="holder">
+            <img height="280px" src="/static/assets/trophy.jpeg" alt="">
+        </a>
+        <a href="awards.html" class="info">
+            <div class="text">Celebrating Our Achievements</div>
+            <div class="teaminfo">From national competitions to campus showcases, our awards reflect dedication, skill, and a relentless pursuit of excellence in flight</div>
+        </a>
+    </section>
+    <div class="line"></div>
+
+
+
     <div class="bird-container">
         <img class="bird" src="/static/assets/logo.png" alt="">
         <img class="bird" src="/static/assets/logo.png" alt="">
         <img class="bird" src="/static/assets/logo.png" alt="">
         <img class="bird" src="/static/assets/logo.png" alt="">
         <img class="bird" src="/static/assets/logo.png" alt="">
+        <img class="bird" src="/static/assets/logo.png" alt="">
     </div>
-<script src="index.js"></script>
 </body>
 <script>
     window.onload = () => {
         setTimeout(() => {
             document.querySelector('.bird-container').remove();
-        }, 6000); 
+        }, 6000);
     };
 </script>
 <script>
@@ -76,25 +112,25 @@
         const slideshow = document.querySelector(`.${className}`);
         const images = slideshow.querySelectorAll('img');
         let currentIndex = 0;
-    
+
         setInterval(() => {
             images[currentIndex].classList.remove('active');
             currentIndex = (currentIndex + 1) % images.length;
             images[currentIndex].classList.add('active');
         }, interval);
     }
-    
+
     window.onload = () => {
-        createSlideshow('first-slideshow', 3000);  
-        createSlideshow('second-slideshow', 5000); 
-        createSlideshow('third-slideshow', 7000);  
-    
+        createSlideshow('first-slideshow', 3000);
+        createSlideshow('second-slideshow', 5000);
+        createSlideshow('third-slideshow', 7000);
+
         setTimeout(() => {
             const birds = document.querySelector('.bird-container');
             if (birds) birds.remove();
         }, 6000);
     };
-    </script>
-    
+</script>
+
 
 </html>
