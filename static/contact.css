@@ -83,5 +83,36 @@
     background-color: #083a66;
   }
 
- 
+ .headerline {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 20px;
+  background-color: #c9d0de;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  position: sticky;
+
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background-color: #c9d0de;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0d2132;
+  background-color: #c9d0de;
+  margin-bottom: 3px;
+}
+
+.logo-link img {
+  background-color: #c9d0de;
+
+}
   
