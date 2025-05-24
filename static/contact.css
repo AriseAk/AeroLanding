@@ -10,8 +10,8 @@
   }
 
   .contact-section {
-    background-color: #0d2132; /* Blue background */
-    padding: 60px 20px 140px; /* Extra bottom padding for overlapping cards */
+    background-color: #0d2132; 
+    padding: 60px 20px 140px; 
     position: relative;
     text-align: center;
     color: white;
@@ -82,4 +82,6 @@
   .btn:hover {
     background-color: #083a66;
   }
+
+ 
   

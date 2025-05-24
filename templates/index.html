@@ -10,10 +10,29 @@
 
 <body>
     <div class="page-transition">
+
+<div class="sidebar-overlay"></div>
+<aside class="sidebar">
+    <div class="sidebar-header">
+        <button width="30px"
+        class="sidebar-close" aria-label="Close sidebar">
+            <img src="/static/assets/close.svg" alt="Close" width="28" height="28">
+        </button>
+    </div>
+    <button onclick="window.location.href='team.html'">Teams</button>
+    <button onclick="window.location.href='camera.html'">Gallery</button>
+    <button onclick="window.location.href='awards.html'">Awards</button>
+    <button onclick="window.location.href='about.html'">About</button>
+    <button onclick="window.location.href='contact.html'">Contact</button>
+</aside>
+
+
         <div class="navbar">
             <div class="left">
+                <img  src="/static/assets/hamburger.svg" alt="">
                 <img src="/static/assets/logo.png" alt="">
                 <span>AeroBMSCE</span>
+
             </div>
             <div class="right">
                 <button onclick="window.location.href='team.html'">Teams</button>

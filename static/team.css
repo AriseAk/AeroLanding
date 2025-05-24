@@ -1,7 +1,7 @@
 body {
   margin: 0;
   font-family: 'Junge', cursive, sans-serif;
-  background-color: rgb(186, 186, 109);
+  background-color:#c9d0de;
   color: #222;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .card {
-  background-color:  rgb(92, 124, 68);
+  background-color: #c9d0de;
 
   border: 2px solid #000;
   border-radius: 16px;
@@ -60,7 +60,7 @@ body {
 }
 
 .card h2 {
-  background: rgba(99, 161, 63, 0.9);
+  background: #0d2132;
   color: #eae5e5;
   padding: 10px;
   margin: 0;
@@ -94,7 +94,7 @@ body {
   align-items: center;
   gap: 10px;
   padding: 10px 20px;
-  background-color: rgb(92, 124, 68);
+  background-color: #0d2132;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   position: sticky;
 
@@ -105,18 +105,18 @@ body {
   align-items: center;
   gap: 10px;
   text-decoration: none;
-  background-color: rgb(92, 124, 68);
+  background-color: #0d2132;
 }
 
 .logo {
   font-size: 20px;
   font-weight: bold;
-  color: #000000;
-  background-color: rgb(92, 124, 68);
+  color: #b29f9f;
+  background-color: #0d2132;
 }
 
 .logo-link img {
-  background-color: rgb(92, 124, 68);
+  background-color: #0d2132;
 
 }
 

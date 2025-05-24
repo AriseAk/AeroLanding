@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
 
 
@@ -8,6 +6,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family: "Junge", cursive;
 }
@@ -16,7 +15,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #edf0f6;
+    background-color: #c9d0de;
     color: #000000;
     padding: 10px 20px;
     position: relative;
@@ -71,9 +70,10 @@ body {
     z-index: 9999;
 }
 
-.bird-container img{
+.bird-container img {
     transform: rotate(45deg);
 }
+
 .bird-container .bird {
     position: absolute;
     font-size: 24px;
@@ -81,44 +81,74 @@ body {
     opacity: 0;
 }
 
-.bird:nth-child(1) { animation-delay: -0.4s; top: 100%; left: 100%; }
-.bird:nth-child(2) { animation-delay: 0s; top: 70%; left: 70%; }
-.bird:nth-child(3) { animation-delay: 0.4s; top: 70%; left: 70%; }
-.bird:nth-child(4) { animation-delay: 0.8s; top: 70%; left: 70%; }
-.bird:nth-child(5) { animation-delay: 1.2s; top: 70%; left: 70%; }
-.bird:nth-child(6) { animation-delay: 1.6s; top: 70%; left: 70%; }
+.bird:nth-child(1) {
+    animation-delay: -0.4s;
+    top: 100%;
+    left: 100%;
+}
+
+.bird:nth-child(2) {
+    animation-delay: 0s;
+    top: 70%;
+    left: 70%;
+}
+
+.bird:nth-child(3) {
+    animation-delay: 0.4s;
+    top: 70%;
+    left: 70%;
+}
+
+.bird:nth-child(4) {
+    animation-delay: 0.8s;
+    top: 70%;
+    left: 70%;
+}
+
+.bird:nth-child(5) {
+    animation-delay: 1.2s;
+    top: 70%;
+    left: 70%;
+}
+
+.bird:nth-child(6) {
+    animation-delay: 1.6s;
+    top: 70%;
+    left: 70%;
+}
 
 @keyframes fly-diagonal {
     0% {
-        transform:rotate(-45deg) translate(0, 0) scale(1);
+        transform: rotate(-45deg) translate(0, 0) scale(1);
         opacity: 1;
     }
+
     100% {
-        transform:rotate(+40deg) translate(-150vw, -150vh) scale(0.5);
+        transform: rotate(+40deg) translate(-150vw, -150vh) scale(0.5);
         opacity: 0;
     }
 }
 
-.line{
+.line {
     height: 5px;
     background-color: #040404;
 }
 
-.box{
+.box {
     height: 75vh;
     display: flex;
     position: relative;
 }
 
-.first{
+.first {
     width: 29vw;
 }
 
-.second{
+.second {
     width: 40vw;
 }
 
-.third{
+.third {
     width: 30vw;
 }
 
@@ -134,78 +164,76 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: none;
+    opacity: 0;
     transition: opacity 1s ease-in-out;
+    z-index: 0;
 }
 
 .slideshow img.active {
     opacity: 0.68;
     z-index: 1;
-    display: block;
-}
-.first img,
-.second img,
-.third img {
-    opacity: 1; 
-    transition: opacity 0.3s ease-in-out;
 }
 
 
-.header{
+
+.header {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10;
     text-align: center;
-    color: #000000; 
+    color: #000000;
     font-family: "Junge", cursive;
 }
 
-.covering{
+.covering {
     display: flex;
     position: relative;
 }
 
-.outer{
+.outer {
     font-size: 130px;
     font-weight: 600px;
 }
 
-.inner{
+.inner {
     font-size: 20px;
     font-weight: 300px;
 }
 
-.team{
+.team {
     height: 40vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #edf0f6;
+    background-color: #c9d0de;
     gap: 30px;
 
 }
-.team img{
+
+.team img {
     height: 200px;
     position: relative;
     right: 10;
     border-radius: 300px;
 }
 
-.holder, .info{
+.holder,
+.info {
     cursor: pointer;
 }
-.text{
+
+.text {
     font-size: 33px;
 }
 
-.team a{
+.team a {
     text-decoration: none;
     color: #000000;
 }
 
-.text:hover{
+.text:hover {
     font-size: 2.1rem;
 
 }
@@ -227,6 +255,324 @@ body {
     transform: translateY(-20px);
 }
 
+.left> :nth-child(1) {
+    display: none;
+}
 
-  
-  
+/* Add this to your CSS */
+/* Updated Navbar */
+.navbar {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Center header text when sidebar is open */
+.navbar.active .left {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 0;
+    /* Remove if you added padding-top before */
+    position: fixed;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    height: 100%;
+    background: #c0cadf;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.sidebar-header {
+    height: 56px;
+    width: 5px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0 8px;
+    margin-bottom: 6px;
+
+}
+
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Sidebar button styles */
+.sidebar button:not(.sidebar-close) {
+    display: block;
+    width: 100%;
+    padding: 14px 0;
+    margin-bottom: 16px;
+    font-size: 1.15rem;
+    font-family: "Junge", cursive;
+    background: #767e9f;
+    color: #222;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition:
+        background 0.2s,
+        color 0.2s,
+        transform 0.15s,
+        box-shadow 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    letter-spacing: 0.5px;
+    outline: none;
+}
+
+
+.sidebar button:last-child {
+    margin-bottom: 0;
+}
+
+.sidebar button:hover,
+.sidebar button:focus {
+    background: #4a5bb8;
+    color: #fff;
+    transform: translateX(6px) scale(1.04);
+    box-shadow: 0 4px 16px rgba(74, 91, 184, 0.09);
+}
+
+.sidebar-close {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 18px;
+    right: 100px;
+    padding: 0;
+    cursor: pointer;
+    z-index: 1100;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: none;
+    transition: background 0.15s;
+}
+
+.sidebar-close:hover,
+.sidebar-close:focus {
+    background: #e3e6f6;
+}
+
+.sidebar-close img {
+    display: block;
+    width: 24px;
+    height: 24px;
+    pointer-events: none;
+}
+
+
+.sidebar-close:hover,
+.sidebar-close:focus {
+    background: #e3e6f6;
+}
+
+.sidebar-close img {
+    display: block;
+}
+
+
+
+@media (min-width: 1201px) {
+    .hamburger {
+        display: none;
+    }
+
+    .sidebar {
+        display: none;
+    }
+}
+
+
+@media (max-width: 1200px) {
+    .left> :nth-child(1) {
+        display: block;
+        cursor: pointer;
+    }
+
+    .navbar {
+        background-color: #c9d0de;
+    }
+
+    .navbar .right {
+        display: none;
+    }
+
+    .navbar.active .right {
+        display: none;
+    }
+
+    .left> :nth-child(3) {
+        display: block;
+    }
+
+    .outer {
+        font-size: 70px;
+        font-weight: 600px;
+    }
+
+    .first,
+    .third {
+        display: none;
+    }
+
+    .second,
+    .box {
+        width: 100vw;
+        height: 45vh;
+        max-height: 500px;
+        font-size: 20px;
+        font-weight: bolder;
+
+    }
+
+
+    .slideshow {
+        height: 100%;
+    }
+
+    .header {
+        top: 65%;
+        transform: translate(-50%, -65%);
+    }
+
+    .team {
+        gap: 0px background-color: #c9d0de;
+
+    }
+
+    .text {
+        font-size: 25px;
+    }
+
+    .textinfo {
+        font-size: 17px;
+    }
+
+    .team img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 600px) {
+    .second {
+        height: 80vh;
+    }
+
+    .slideshow {
+        height: 60vh;
+    }
+
+    .outer {
+        font-size: 2.5rem;
+        /* Smaller text for mobile */
+    }
+
+    .inner {
+        font-size: 1rem;
+    }
+
+
+}
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100vw;
+        overflow-x: hidden;
+    }
+
+    .navbar {
+        width: 100vw;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+
+    .box,
+    .covering,
+    .first,
+    .second,
+    .third {
+        flex-direction: column;
+        width: 100vw;
+        min-width: 0;
+        box-sizing: border-box;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .second,
+    .box {
+        height: 50vh;
+        max-height: 350px;
+        font-size: 20px;
+        font-weight: bolder;
+    }
+
+    .slideshow {
+        height: 100%;
+    }
+
+    .team,
+    .info,
+    .text,
+    .teaminfo {
+        max-width: 95vw;
+        width: 100%;
+        box-sizing: border-box;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        overflow-wrap: break-word;
+        word-break: break-word;
+        white-space: normal;
+        text-wrap: wrap;
+    }
+
+    .text {
+        font-size: 1.1rem;
+    }
+
+    .teaminfo {
+        font-size: 0.95rem;
+    }
+
+
+}

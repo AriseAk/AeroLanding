@@ -1,37 +1,41 @@
 @import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
 
-.headerline{
+.headerline {
     display: flex;
     color: rgb(0, 0, 0);
     height: 5vh;
     background-color: beige;
 }
-.logo{
-  font-size: 20px;
-  font-weight: 600;
-  margin: 6px;
-  cursor: pointer;
+
+.logo {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 6px;
+    cursor: pointer;
 }
-.headerline img{
-  cursor: pointer;
-  margin-left: 3px;
-  margin-top: 4px;
+
+.headerline img {
+    cursor: pointer;
+    margin-left: 3px;
+    margin-top: 4px;
 }
-body a{
-  text-decoration: none;
+
+body a {
+    text-decoration: none;
 }
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: "Junge", cursive;
 }
 
-.box{
+.box {
     display: flex;
     height: 45vh;
 }
 
-.left{
+.left {
     width: 50vw;
     background-color: beige;
     display: flex;
@@ -41,26 +45,27 @@ body a{
     font-size: 20px;
 
 }
-.content{
+
+.content {
     display: flex;
     justify-content: center;
     width: 30vw;
 
 }
 
-.right{
-    width:50vw;
+.right {
+    width: 50vw;
 
 }
 
-.container{
+.container {
     display: flex;
     height: 60vh;
     width: 100vw;
 
 }
 
-.first{
+.first {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -72,11 +77,13 @@ body a{
 
 
 }
-.rotate{
+
+.rotate {
     transform: rotate(-90deg);
 
 }
-.second{
+
+.second {
     width: 60vw;
     font-size: 15px;
     display: flex;
@@ -84,58 +91,62 @@ body a{
     align-items: center;
 }
 
-.main{
+.main {
     width: 40vw;
     display: flex;
 }
-.third{
+
+.third {
     width: 19vw;
     background-color: #675412c6;
 }
 
-.bag{
+.bag {
     display: flex;
     height: 35vh;
     width: 100vw;
 
 }
 
-.idk{
+.idk {
     width: 50vw;
 
 }
-.idk2{
+
+.idk2 {
     width: 50vw;
 }
 
 .right img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
-  }
-  
-  .idk img {
+}
+
+.idk img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: cover;
     display: block;
-  }
+}
 
-  .idk2{
+.idk2 {
     font-size: 12px;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #b88866;
-  }
-  .last{
+}
+
+.last {
     width: 30vw;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .social-links {
+}
+
+.social-links {
     margin-top: 18px;
     display: flex;
     gap: 18px;
@@ -149,4 +160,132 @@ body a{
 
 .social-links a:hover {
     color: #fff;
+}
+
+.mobile {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .laptop {
+        display: none;
+
+    }
+
+    .mobile {
+        display: block;
+    }
+
+    .upper {
+        position: relative;
+        overflow: hidden;
+        height: 30vh;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .upper::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: url('/static/assets/aero.jpeg') center/cover no-repeat;
+        opacity: 0.75;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .upper > * {
+  position: relative;
+  z-index: 10;
+}
+
+    .upper a {
+        background-color: transparent;
+        font-weight: bolder;
+    }
+
+    .landing {
+        display: flex;
+        width: 30vh;
+    }
+
+    .middle h1 {
+        margin-left: 25vw;
+
+    }
+
+    .two {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .twomain {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 70vw;
+        font-size: 14px;
+        padding-bottom: 30px;
+        padding-top: 30px;
+    }
+    .ending{
+        position: relative;
+        overflow: hidden;
+    }
+
+    .ending::before {
+              content: "";
+        position: absolute;
+        inset: 0;
+        background: url('/static/assets/water.jpeg') ;
+        opacity: 0.75;
+        z-index: 0;
+        pointer-events: none;
+    }
+    .ending > * {
+  position: relative;
+  z-index: 1;
+  font-weight: 500;
+  font-size: 15px;
+  margin:  20px 20px;
+    }
+    @media (max-width: 700px) {
+  .links {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    margin: 32px 0 12px 0;
+    padding: 0 0 24px 0;
+
+  }
+  .links a {
+    display: block;
+    width: 92vw;
+    max-width: 400px;
+    padding: 15px 0;
+    background: #e4ad73;
+    color: #222;
+    font-weight: 600;
+    font-size: 1.1rem;
+    border-radius: 9px;
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: background 0.18s, color 0.18s, transform 0.13s;
+    margin: 0 auto;
+  }
+  .links a:hover,
+  .links a:focus {
+    background: #b88866;
+    color: #fff;
+    transform: translateY(-2px) scale(1.03);
+  }
+}
+
 }

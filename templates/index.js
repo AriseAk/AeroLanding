@@ -1,74 +1,126 @@
-window.onload = () => {
-    const transition = document.querySelector('.page-transition');
 
-    // Fade in the main content
+const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+async function initApp() {
+    const transition = document.querySelector('.page-transition');
+    
     requestAnimationFrame(() => {
         transition.classList.add('visible');
     });
 
-    // Fade out and remove birds after 6 seconds
-    setTimeout(() => {
+    setTimeout(async () => {
         const birds = document.querySelector('.bird-container');
         if (birds) {
             birds.classList.add('fade-out');
-            setTimeout(() => birds.remove(), 1000); // Wait for fade animation
+            await delay(1000);
+            birds.remove();
         }
     }, 6000);
 
-    // Initialize all slideshows
-    createSlideshow('first-slideshow', 3000);
-    createSlideshow('second-slideshow', 5000);
-    createSlideshow('third-slideshow', 7000);
+    initializeSlideshows();
+    
+    setupNavigation();
+}
 
-    // Apply transition to all anchor (<a>) tags
+function initializeSlideshows() {
+    createSlideshow('.first-slideshow', 5000);
+    createSlideshow('.second-slideshow', 7000);
+    createSlideshow('.third-slideshow', 9000);
+}
+
+async function handleNavigation(event, href) {
+    event.preventDefault();
+    const transition = document.querySelector('.page-transition');
+    
+    transition.classList.remove('visible');
+    transition.classList.add('exit');
+    
+    await delay(600);
+    window.location.href = href;
+}
+
+function createSlideshow(selector, interval) {
+    const container = document.querySelector(selector);
+    if (!container) return;
+
+    const slides = container.querySelectorAll('img');
+    let current = 0;
+
+    slides.forEach((slide, idx) => {
+        slide.classList.toggle('active', idx === 0);
+    });
+
+    setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+    }, interval);
+}
+
+async function setupSidebar() {
+    const hamburger = document.querySelector('.left img[src="/static/assets/hamburger.svg"]');
+    const sidebar = document.querySelector('.sidebar');
+    const overlay = document.querySelector('.sidebar-overlay');
+    const navbar = document.querySelector('.navbar');
+    const closeBtn = document.querySelector('.sidebar-close');
+
+    if (hamburger) {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            navbar.classList.toggle('active');
+        });
+    }
+
+    if (overlay) {
+        overlay.addEventListener('click', () => {
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            navbar.classList.remove('active');
+        });
+    }
+
+    if (closeBtn) {
+        closeBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            sidebar.classList.remove('active');
+            overlay.classList.remove('active');
+            navbar.classList.remove('active');
+        });
+    }
+
+    if (sidebar) {
+        sidebar.addEventListener('click', (e) => e.stopPropagation());
+    }
+}
+
+
+function setupNavigation() {
     document.querySelectorAll('a').forEach(link => {
         if (link.href && !link.href.includes('#')) {
-            link.addEventListener('click', e => handleNavigation(e, link.href));
+            link.addEventListener('click', async (e) => {
+                await handleNavigation(e, link.href);
+            });
         }
     });
 
-    // Apply transition to all buttons using window.location.href
     document.querySelectorAll('button').forEach(button => {
         const onclick = button.getAttribute('onclick');
-        if (onclick && onclick.includes("window.location.href")) {
+        if (onclick?.includes("window.location.href")) {
             const match = onclick.match(/window\.location\.href\s*=\s*['"](.+?)['"]/);
             if (match) {
                 const href = match[1];
                 button.removeAttribute('onclick');
-                button.addEventListener('click', e => handleNavigation(e, href));
+                button.addEventListener('click', async (e) => {
+                    await handleNavigation(e, href);
+                });
             }
         }
     });
-};
-
-// Function to handle page exit transitions
-function handleNavigation(event, href) {
-    event.preventDefault();
-    const transition = document.querySelector('.page-transition');
-    transition.classList.remove('visible');
-    transition.classList.add('exit');
-
-    setTimeout(() => {
-        window.location.href = href;
-    }, 600); // Match CSS transition duration
 }
 
-// Slideshow function
-function createSlideshow(containerId, interval) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-    
-    const slides = container.querySelectorAll('img');
-    let current = 0;
-
-    slides.forEach((slide, index) => {
-        slide.style.opacity = index === 0 ? '1' : '0';
-        slide.style.transition = 'opacity 1s ease-in-out';
-    });
-
-    setInterval(() => {
-        slides[current].style.opacity = '0';
-        current = (current + 1) % slides.length;
-        slides[current].style.opacity = '1';
-    }, interval);
-}
+document.addEventListener('DOMContentLoaded', async () => {
+    await initApp();
+    await setupSidebar();
+});
