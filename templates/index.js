@@ -1,13 +1,14 @@
-
 const delay = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 async function initApp() {
     const transition = document.querySelector('.page-transition');
     
+    // Fade in main content
     requestAnimationFrame(() => {
         transition.classList.add('visible');
     });
 
+    // Fade out and remove birds after 6 seconds
     setTimeout(async () => {
         const birds = document.querySelector('.bird-container');
         if (birds) {
@@ -18,27 +19,27 @@ async function initApp() {
     }, 6000);
 
     initializeSlideshows();
-    
-    setupNavigation();
+    setupNavigation(); // Only for buttons now!
 }
 
+// Slideshow initialization
 function initializeSlideshows() {
     createSlideshow('.first-slideshow', 5000);
     createSlideshow('.second-slideshow', 7000);
     createSlideshow('.third-slideshow', 9000);
 }
 
+// Fade-out transition for navigation (used only for buttons)
 async function handleNavigation(event, href) {
     event.preventDefault();
     const transition = document.querySelector('.page-transition');
-    
     transition.classList.remove('visible');
     transition.classList.add('exit');
-    
     await delay(600);
     window.location.href = href;
 }
 
+// Slideshow logic (unchanged)
 function createSlideshow(selector, interval) {
     const container = document.querySelector(selector);
     if (!container) return;
@@ -57,6 +58,7 @@ function createSlideshow(selector, interval) {
     }, interval);
 }
 
+// Sidebar logic (unchanged)
 async function setupSidebar() {
     const hamburger = document.querySelector('.left img[src="/static/assets/hamburger.svg"]');
     const sidebar = document.querySelector('.sidebar');
@@ -95,16 +97,8 @@ async function setupSidebar() {
     }
 }
 
-
+// Only apply fade-out transition for buttons using window.location.href
 function setupNavigation() {
-    document.querySelectorAll('a').forEach(link => {
-        if (link.href && !link.href.includes('#')) {
-            link.addEventListener('click', async (e) => {
-                await handleNavigation(e, link.href);
-            });
-        }
-    });
-
     document.querySelectorAll('button').forEach(button => {
         const onclick = button.getAttribute('onclick');
         if (onclick?.includes("window.location.href")) {
@@ -120,6 +114,16 @@ function setupNavigation() {
     });
 }
 
+// Ensure fade-in transition always runs on page load and when navigating back
+window.addEventListener('pageshow', (event) => {
+    const transition = document.querySelector('.page-transition');
+    if (transition) {
+        transition.classList.remove('exit');
+        transition.classList.add('visible');
+    }
+});
+
+// Initialize everything
 document.addEventListener('DOMContentLoaded', async () => {
     await initApp();
     await setupSidebar();
