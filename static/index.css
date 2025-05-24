@@ -475,7 +475,8 @@ body {
     }
 
     .team {
-        gap: 0px background-color: #c9d0de;
+        width: 100vw;
+        background-color: #c9d0de;
 
     }
 
@@ -558,11 +559,9 @@ body {
     .info,
     .text,
     .teaminfo {
-        max-width: 95vw;
+
         width: 100%;
         box-sizing: border-box;
-        padding-left: 2vw;
-        padding-right: 2vw;
         overflow-wrap: break-word;
         word-break: break-word;
         white-space: normal;
