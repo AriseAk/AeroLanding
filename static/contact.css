@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  body {
+    background-color: #d2cedd;
+  }
+
+  .contact-section {
+    background-color: #0d2132; /* Blue background */
+    padding: 60px 20px 140px; /* Extra bottom padding for overlapping cards */
+    position: relative;
+    text-align: center;
+    color: white;
+    height: 400px;
+  }
+  
+  .contact-intro h2 {
+    font-size: 36px;
+    margin-bottom: 10px;
+  }
+  
+  .contact-intro p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  
+  .card-container {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 180px; 
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: 370px;
+    width: 100vw;
+  }
+  
+  .contact-card {
+    background: #ffffff;
+    color: #1a1a1a;
+    width: 300px;
+    padding: 30px 20px;
+    text-align: center;
+  }
+  
+  .icon {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  
+  .contact-card h3 {
+    font-size: 20px;
+    color: #0b4c84;
+    margin-bottom: 10px;
+  }
+  
+  .contact-card p {
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .btn {
+    background-color: #0d2132;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .btn:hover {
+    background-color: #083a66;
+  }
+  

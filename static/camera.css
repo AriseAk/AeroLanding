@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+
+
+}
+
+* {
+    background-color: #bff0ff;
+    font-family: "Junge", cursive;
+}
+
+.gallery-container {
+    width: 650px;
+    text-align: center;
+}
+
+.main-image-wrapper {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+    background-color: #000;
+    border: 2px solid black;
+
+}
+
+.main-image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.box {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+}
+
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 2;
+}
+
+#prev {
+    left: 10px;
+}
+
+#next {
+    right: 10px;
+}
+
+.thumbnails {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.thumb {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: transform 0.2s, border 0.2s;
+}
+
+.thumb:hover {
+    transform: scale(1.05);
+}
+
+.thumb.selected {
+    border: 3px solid #007BFF;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.headerline {
+    display: flex;
+    height: 18px;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    background-color: #0d2132;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    position: sticky;
+
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    background-color: #0d2132;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0b1624;
+    background-color: #0d2132;
+}
+
+.logo-link img {
+    background-color: #0d2132;
+
+}
+
+.aero {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: #0b1624;
+}
+
+.gallery {
+    font-size: 30px;
+    font-weight: bolder;
+}

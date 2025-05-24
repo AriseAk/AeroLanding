@@ -9,6 +9,7 @@
 </head>
 
 <body>
+    <div class="page-transition">
     <div class="navbar">
         <div class="left">
             <img src="/static/assets/logo.png" alt="">
@@ -99,38 +100,11 @@
         <img class="bird" src="/static/assets/logo.png" alt="">
         <img class="bird" src="/static/assets/logo.png" alt="">
     </div>
+</div>
+<script src="/templates/index.js"></script>
+
 </body>
-<script>
-    window.onload = () => {
-        setTimeout(() => {
-            document.querySelector('.bird-container').remove();
-        }, 6000);
-    };
-</script>
-<script>
-    function createSlideshow(className, interval) {
-        const slideshow = document.querySelector(`.${className}`);
-        const images = slideshow.querySelectorAll('img');
-        let currentIndex = 0;
 
-        setInterval(() => {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }, interval);
-    }
-
-    window.onload = () => {
-        createSlideshow('first-slideshow', 3000);
-        createSlideshow('second-slideshow', 5000);
-        createSlideshow('third-slideshow', 7000);
-
-        setTimeout(() => {
-            const birds = document.querySelector('.bird-container');
-            if (birds) birds.remove();
-        }, 6000);
-    };
-</script>
 
 
 </html>

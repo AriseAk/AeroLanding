@@ -81,7 +81,7 @@ body {
     opacity: 0;
 }
 
-.bird:nth-child(1) { animation-delay: -0.4s; top: 70%; left: 70%; }
+.bird:nth-child(1) { animation-delay: -0.4s; top: 100%; left: 100%; }
 .bird:nth-child(2) { animation-delay: 0s; top: 70%; left: 70%; }
 .bird:nth-child(3) { animation-delay: 0.4s; top: 70%; left: 70%; }
 .bird:nth-child(4) { animation-delay: 0.8s; top: 70%; left: 70%; }
@@ -94,7 +94,7 @@ body {
         opacity: 1;
     }
     100% {
-        transform:rotate(+20deg) translate(-150vw, -150vh) scale(0.5);
+        transform:rotate(+40deg) translate(-150vw, -150vh) scale(0.5);
         opacity: 0;
     }
 }
@@ -210,3 +210,23 @@ body {
 
 }
 
+
+.page-transition {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.page-transition.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.page-transition.exit {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+
+  
+  

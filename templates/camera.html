@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gallery Slider</title>
+    <link rel="stylesheet" href="/static/camera.css">
+</head>
+
+<body>
+    <div class="headerline">
+        <a href="index.html" class="logo-link">
+            <img width="45" src="/static/assets/logo.png" alt="">
+            <div class="logo">AeroBMSCE</div>
+        </a>
+    </div>
+    <header class="aero">
+        <div class="gallery">AeroBMSCE Gallery</div>
+        <div class="galleryline">Capturing Moments of Innovation and Flight</p>
+    </header>
+
+    <div class="box">
+        <div class="gallery-container">
+            <div class="main-image-wrapper">
+                <button id="prev">&#10094;</button>
+                <img id="mainImage" src="/static/assets/doing.jpeg" alt="Gallery Image">
+                <button id="next">&#10095;</button>
+            </div>
+            <div class="thumbnails" id="thumbnails">
+                <img src="/static/assets/doing.jpeg" class="thumb selected" data-index="0">
+                <img src="/static/assets/inside.jpeg" class="thumb" data-index="1">
+                <img src="/static/assets/design.jpeg" class="thumb" data-index="2">
+                <img src="/static/assets/drone.jpeg" class="thumb" data-index="3">
+            </div>
+        </div>
+    </div>
+    <script>
+        const images = ['/static/assets/doing.jpeg', '/static/assets/inside.jpeg', '/static/assets/design.jpeg', '/static/assets/drone.jpeg'];
+        let currentIndex = 0;
+        const mainImage = document.getElementById('mainImage');
+
+        const thumbnails = document.querySelectorAll('.thumb');
+
+        function updateMainImage(index) {
+            currentIndex = index;
+            mainImage.src = images[currentIndex];
+            thumbnails.forEach((thumb, i) => {
+                thumb.classList.toggle('selected', i === currentIndex);
+            });
+        }
+
+        document.getElementById('prev').addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateMainImage(currentIndex);
+        });
+
+        document.getElementById('next').addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateMainImage(currentIndex);
+        });
+
+        thumbnails.forEach((thumb, i) => {
+            thumb.addEventListener('click', () => updateMainImage(i));
+        });
+
+        updateMainImage(currentIndex);
+    </script>
+</body>
+
+</html>
