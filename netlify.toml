@@ -2,4 +2,28 @@
   from = "/"
   to = "/templates/index.html"
   status = 200
-  force = true
+
+[[redirects]]
+  from = "/team.html"
+  to = "/templates/team.html"
+  status = 200
+
+[[redirects]]
+  from = "/camera.html"
+  to = "/templates/camera.html"
+  status = 200
+
+[[redirects]]
+  from = "/awards.html"
+  to = "/templates/awards.html"
+  status = 200
+
+[[redirects]]
+  from = "/about.html"
+  to = "/templates/about.html"
+  status = 200
+
+[[redirects]]
+  from = "/contact.html"
+  to = "/templates/contact.html"
+  status = 200
