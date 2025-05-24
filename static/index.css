@@ -47,7 +47,7 @@ body {
 
 }
 
-.navbar button {
+.navbar a {
     font-size: 20px;
     background-color: transparent;
     border: none;
@@ -55,9 +55,10 @@ body {
     padding: 8px 12px;
     cursor: pointer;
     position: relative;
+    text-decoration: none;
 }
 
-.navbar button:hover {
+.navbar a:hover {
     background-color: #b8c2e8;
     border-radius: 10px;
 }
@@ -330,8 +331,9 @@ body {
 }
 
 /* Sidebar button styles */
-.sidebar button:not(.sidebar-close) {
+.sidebar a:not(.sidebar-close) {
     display: block;
+     text-align: center;
     width: 100%;
     padding: 14px 0;
     margin-bottom: 16px;
@@ -350,15 +352,16 @@ body {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
     letter-spacing: 0.5px;
     outline: none;
+    text-decoration: none;
 }
 
 
-.sidebar button:last-child {
+.sidebar a:last-child {
     margin-bottom: 0;
 }
 
-.sidebar button:hover,
-.sidebar button:focus {
+.sidebar a:hover,
+.sidebar a:focus {
     background: #4a5bb8;
     color: #fff;
     transform: translateX(6px) scale(1.04);
