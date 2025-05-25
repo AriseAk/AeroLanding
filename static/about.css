@@ -192,7 +192,7 @@ body a {
         position: absolute;
         inset: 0;
         background: url('/static/assets/aero.jpeg') center/cover no-repeat;
-        opacity: 0.75;
+        opacity: 0.60;
         z-index: 0;
         pointer-events: none;
     }
@@ -207,10 +207,18 @@ body a {
     }
 
     .landing {
+        padding-left: 60px;
         display: flex;
+        justify-content: center;
+        color: black;
+        font-weight: 900;
         width: 30vh;
     }
 
+    .middle{
+        background-color: black;
+        color: white;
+    }
     .middle h1 {
         margin-left: 25vw;
 
@@ -255,12 +263,12 @@ body a {
     }
     @media (max-width: 700px) {
   .links {
+        background-color: black;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 14px;
-    margin: 32px 0 12px 0;
     padding: 0 0 24px 0;
 
   }

@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Junge&display=swap');
+
+body {
+    margin: 0;
+    font-family: "Junge", cursive;
+    background: linear-gradient(135deg, #0d2132, #145374);
+    color: #e0e7ff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #a3cef1;
+    text-shadow: 0 0 8px #a3cef1;
+}
+
+.awards-container {
+    max-width: 900px;
+    width: 100%;
+    background: #5a637e;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 0 20px rgba(163, 206, 241, 0.5);
+}
+
+.award {
+    background: #1c4860;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(163, 206, 241, 0.3);
+    transition: background 0.3s ease;
+}
+
+.award:hover {
+    background: #0d3b66;
+}
+
+.award-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+    color: #dbeafe;
+}
+
+.award-description {
+    font-size: 1rem;
+    color: #cbd5e1;
+}
+ .headerline {
+    width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 8px 20px;
+  background-color: #c9d0de;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  position: sticky;
+
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  background-color: #c9d0de;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: #0d2132;
+  background-color: #c9d0de;
+  margin-bottom: 3px;
+}
+
+.logo-link img {
+  background-color: #c9d0de;
+
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    .awards-container {
+        padding: 20px;
+    }
+    .award {
+        padding: 15px;
+    }
+    .award-title {
+        font-size: 1.2rem;
+    }
+    .award-description {
+        font-size: 0.9rem;
+    }
+}

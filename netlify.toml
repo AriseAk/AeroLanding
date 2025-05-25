@@ -15,7 +15,7 @@
 
 [[redirects]]
   from = "/awards.html"
-  to = "/templates/awards.html"
+  to = "/templates/award.html"
   status = 200
 
 [[redirects]]
