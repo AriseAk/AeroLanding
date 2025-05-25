@@ -99,7 +99,21 @@ body a {
 .third {
     width: 19vw;
     background-color: #675412c6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    
 }
+
+.third a{
+    text-decoration: none;
+    font-size: 25px;
+    color: black;
+    font-weight: bold;
+}
+
 
 .bag {
     display: flex;
