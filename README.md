@@ -1,6 +1,6 @@
 # ✈️ Aerolanding
 
-Welcome to **Aerolanding** — the official website for the AeroBMSCE Aeromodelling Club!  
+Welcome to **Aerolanding** — a sample website for the AeroBMSCE Aeromodelling Club!  
 This project is a modern, responsive, and interactive web platform that showcases our teams, achievements, gallery, and contact details.
 
 ---
