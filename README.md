@@ -98,13 +98,4 @@ python -m http.server
 Pull requests are welcome!  
 For major changes, please open an issue first to discuss what you would like to change.
 
----
 
-
-
----
-
-*Tip: Add badges, more screenshots, or deployment instructions as needed for your audience!*
-
----
-Answer from Perplexity: pplx.ai/share
