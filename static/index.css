@@ -65,70 +65,42 @@ body {
 
 .bird-container {
     position: fixed;
-    bottom: 0;
-    right: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     pointer-events: none;
     z-index: 9999;
-}
-
-.bird-container img {
-    transform: rotate(45deg);
+    width: 0;
+    height: 0;
 }
 
 .bird-container .bird {
     position: absolute;
+    width: 60px; 
+    height: 60px;
     font-size: 24px;
-    animation: fly-diagonal 5s linear forwards;
     opacity: 0;
+    animation: fly-center-to-topleft 3s linear forwards;
 }
 
-.bird:nth-child(1) {
-    animation-delay: -0.4s;
-    top: 100%;
-    left: 100%;
-}
+.bird:nth-child(1) { animation-delay: -0.4s; }
+.bird:nth-child(2) { animation-delay: 0s; }
+.bird:nth-child(3) { animation-delay: 0.4s; }
+.bird:nth-child(4) { animation-delay: 0.8s; }
+.bird:nth-child(5) { animation-delay: 1.2s; }
+.bird:nth-child(6) { animation-delay: 1.6s; }
 
-.bird:nth-child(2) {
-    animation-delay: 0s;
-    top: 70%;
-    left: 70%;
-}
-
-.bird:nth-child(3) {
-    animation-delay: 0.4s;
-    top: 70%;
-    left: 70%;
-}
-
-.bird:nth-child(4) {
-    animation-delay: 0.8s;
-    top: 70%;
-    left: 70%;
-}
-
-.bird:nth-child(5) {
-    animation-delay: 1.2s;
-    top: 70%;
-    left: 70%;
-}
-
-.bird:nth-child(6) {
-    animation-delay: 1.6s;
-    top: 70%;
-    left: 70%;
-}
-
-@keyframes fly-diagonal {
+@keyframes fly-center-to-topleft {
     0% {
-        transform: rotate(-45deg) translate(0, 0) scale(1);
+        transform: translate(0, 0) scale(1) rotate(0deg);
         opacity: 1;
     }
-
     100% {
-        transform: rotate(+40deg) translate(-150vw, -150vh) scale(0.5);
+        transform: translate(-50vw, -50vh) scale(0.5) rotate(-40deg);
         opacity: 0;
     }
 }
+
 
 .line {
     height: 5px;
@@ -491,6 +463,10 @@ body {
     .team img {
         width: 100px;
         height: 100px;
+    }
+    .bird-container{
+        top: 60%;
+        left: 40%;
     }
 }
 
